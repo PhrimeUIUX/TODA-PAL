@@ -1,6 +1,6 @@
 // ✅ Hard-coded latest APK (no API dependency)
 const LATEST_APK_URL =
-  "https://storage.googleapis.com/ppctoda_website/ppctoda_apk/ppctoda_v1.0.29(49).apk";
+  "https://storage.googleapis.com/ppctoda_website/ppctoda_apk/ppctoda_v1.0.28(48).apk";
 
 // ✅ iOS App Store link
 const IOS_APP_URL = "https://apps.apple.com/us/app/ppc-toda/id6743928831";
