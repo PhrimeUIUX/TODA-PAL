@@ -8,6 +8,28 @@
     <link rel="stylesheet" href="style/downloadbuttonpopup.css">
   </head>
   <body>
+
+    <div class="overlay" id="popupOverlay">
+      <div class="popup">
+        <dotlottie-player
+          src="https://lottie.host/09cee977-1e44-4cdd-8d2c-eac364a06be9/aVam5DrIeQ.lottie"
+          style="width: 100px; height: 100px"
+          autoplay
+          loop
+        ></dotlottie-player>
+        <h2>Ano ang gusto mo i-install?</h2>
+        <div id="answerButtonContainer">
+          <button class="yes" onclick="answer('yes')">
+            APK
+            <img id="download_prompt_icons" src="assets/android_2_fill.png" />
+          </button>
+          <button class="no" onclick="answer('no')">
+            Fast <img id="download_prompt_icons" src="assets/flash_fill.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div id="hero-section">
       <div id="headline">
         Book a <span class="gradient-text">Tricycle</span> at the Tip of Your Finger</div>
