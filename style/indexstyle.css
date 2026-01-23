@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-VariableItalic.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family:
+    "Satoshi",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #09244b;
+}
+
+#hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  max-width: 100vw;
+  min-height: 100svh; /* better than 100% on mobile */
+
+  gap: clamp(24px, 4vw, 48px);
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+
+#headline {
+  width: 100%;
+  max-width: 1100px;
+
+  font-size: clamp(38px, 8vw, 92px);
+  font-weight: 450;
+
+  line-height: 1.15; /* Satoshi sweet spot */
+  letter-spacing: -0.015em;
+
+  color: #fff;
+  overflow-wrap: break-word;
+}
+
+#subtext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 720px;
+
+  font-size: clamp(14px, 2.8vw, 20px);
+  line-height: 1.45;
+
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: -0.01em;
+}
+
+.gradient-text {
+  display: inline-block;
+  width: fit-content;
+  padding: 0 1.5px 0 0;
+  color: transparent;
+  background: linear-gradient(
+    120deg,
+    #fff 0%,
+    #fff 45%,
+    #007bff 50%,
+    #fff 55%,
+    #fff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 600% 100%;
+  animation: slashOnce 10s linear infinite;
+}
+
+@keyframes slashOnce {
+  0% {
+    background-position: 200% 0;
+    /* start hidden (right) */
+  }
+
+  98% {
+    background-position: 0 0;
+    /* smooth slash across */
+  }
+
+  99% {
+    background-position: -200% 0;
+    /* instantly jump out of view */
+  }
+
+  100% {
+    background-position: -200% 0;
+    /* stay hidden until next cycle */
+  }
+}
+
+#contactbuttonmargin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(40px, 8vw, 60px);
+}
+
+#contactbutton {
+  height: auto;
+  width: fit-content;
+  align-self: center;
+  padding: 10px 20px;
+  border-radius: 1000px;
+  font-size: clamp(16px, 3vw, 22px);
+  letter-spacing: 0px;
+  color: white;
+  background-color: #007bff;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  animation: pulseSize 1s ease-out infinite;
+  transition: 0.5s ease;
+}
+
+#contactbutton:hover {
+  box-shadow: 0 0 20px 4px #007bff80;
+  /* smooth glow shadow */
+}
+
+@keyframes pulseSize {
+  0% {
+    font-size: clamp(16px, 3vw, 22px);
+  }
+
+  50% {
+    font-size: clamp(18px, 3vw, 24px);
+  }
+
+  100% {
+    font-size: clamp(16px, 3vw, 22px);
+  }
+}
