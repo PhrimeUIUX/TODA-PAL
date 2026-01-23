@@ -31,11 +31,44 @@ body {
 
   text-align: center;
   max-width: 100vw;
-  min-height: 100svh; /* better than 100% on mobile */
+  min-height: 100svh; /* mobile-safe viewport height */
 
   gap: clamp(24px, 4vw, 48px);
   padding-inline: clamp(16px, 4vw, 32px);
+  padding-block: clamp(48px, 10vh, 96px);
+
+  /* Background */
+  background-image: url("https://storage.googleapis.com/ppctoda_website/ppctoda_assets/todapalbg.jpg");
+  background-size: cover;        /* fills screen */
+  background-position: center;   /* keeps subject centered */
+  background-repeat: no-repeat;
 }
+
+.welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 12px 24px;
+  border-radius: 999px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  background: rgba(255, 255, 255, 0.08);
+  
+
+  max-width: 90%;
+}
+
+.welcome-badge .text {
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
 
 #headline {
   width: 100%;
