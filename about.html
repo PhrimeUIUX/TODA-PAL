@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About • PPC TODA</title>
+
+    <!-- Satoshi Font -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =========================
+       GLOBAL RESET
+    ========================= */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        font-family:
+          "Satoshi",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        color: #ffffff;
+
+        background-image: url("https://storage.googleapis.com/ppctoda_website/ppctoda_assets/todapalbg.jpg");
+        background-size: cover; /* fills screen */
+        background-position: center; /* keeps subject centered */
+        background-repeat: no-repeat;
+      }
+
+      /* =========================
+       ABOUT PAGE WRAPPER
+    ========================= */
+      .about-wrapper {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(20px, 4vw, 40px);
+      }
+
+      /* =========================
+       GLASS CARD
+    ========================= */
+      .about-glass {
+        width: 100%;
+        max-width: 420px;
+
+        background: rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(22px) saturate(160%);
+        -webkit-backdrop-filter: blur(22px) saturate(160%);
+
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+
+        padding: 28px 24px;
+        margin: 0px 16px;
+        text-align: center;
+
+        box-shadow:
+          0 16px 40px rgba(0, 0, 0, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+        animation: fadeUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      @keyframes fadeUp {
+        from {
+          transform: translateY(12px) scale(0.98);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* =========================
+       PROFILE
+    ========================= */
+      .about-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .about-avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      }
+
+      .about-profile h1 {
+        margin: 8px 0 0;
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .about-subtitle {
+        margin: 0;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      /* =========================
+       INFO
+    ========================= */
+      .about-info {
+        margin-top: 18px;
+      }
+
+      .about-info p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      /* =========================
+       CREDITS
+    ========================= */
+      .about-credits {
+        margin-top: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .credit-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        padding: 10px 12px;
+        border-radius: 14px;
+
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 600;
+
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .credit-link img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+
+      .credit-link:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.18);
+
+        box-shadow:
+          0 8px 22px rgba(0, 0, 0, 0.25),
+          0 0 18px rgba(0, 123, 255, 0.35);
+      }
+
+      /* =========================
+       FOOT NOTE
+    ========================= */
+      .about-footer {
+        margin-top: 18px;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="about-wrapper">
+      <div class="about-glass">
+        <div class="about-profile">
+          <img
+            src="assets/about/ppctoda-logo.png"
+            alt="Phrime UI/UX Designer"
+            class="about-avatar"
+          />
+          <h1>PPC TODA</h1>
+          <p class="about-subtitle">Modern TODA booking experience</p>
+        </div>
+
+        <div class="about-info">
+          <p>
+            PPC TODA is built to make everyday tricycle rides faster, safer, and
+            more accessible through thoughtful design and technology.
+          </p>
+        </div>
+
+        <div class="about-credits">
+          <a
+            href="https://speedovate.com"
+            target="_blank"
+            rel="noopener"
+            class="credit-link"
+          >
+            <img src="assets/about/speedovate-logo.png" alt="Speedovate" />
+            <span>Powered by Speedovate</span>
+          </a>
+
+          <a
+            href="https://facebook.com/Phrimeuniverse"
+            target="_blank"
+            rel="noopener"
+            class="credit-link"
+          >
+            <img src="assets/about/phrimeuiux-profile.png" alt="Phrime UI/UX" />
+            <span>Designed & Developed by Phrime UI/UX</span>
+          </a>
+        </div>
+
+        <div class="about-footer">© 2026 PPC TODA</div>
+      </div>
+    </section>
+  </body>
+</html>

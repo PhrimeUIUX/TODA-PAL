@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   NAV BAR
+========================= */
+.glass-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  padding: 10px clamp(16px, 4vw, 32px);
+
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   HAMBURGER BUTTON
+========================= */
+.nav-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle span:nth-child(1) {
+  transform: translateY(-6px);
+}
+.nav-toggle span:nth-child(2) {
+  transform: translateY(0);
+}
+.nav-toggle span:nth-child(3) {
+  transform: translateY(6px);
+}
+
+/* Open state (X animation) */
+.nav-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+.nav-cta {
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #007bff;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE DRAWER (OVERLAY)
+========================= */
+.nav-drawer {
+  position: fixed;
+  top: 70px; /* below nav */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+
+  width: calc(100% - 32px);
+  max-width: 320px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 16px;
+
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  z-index: 9999; /* floats above content */
+}
+
+.nav-drawer a {
+  padding: 14px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.082);
+}
+
+/* OPEN STATE */
+.nav-drawer.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}

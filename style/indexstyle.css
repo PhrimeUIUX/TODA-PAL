@@ -44,6 +44,21 @@ body {
   background-repeat: no-repeat;
 }
 
+#hero-logo {
+  width: clamp(96px, 18vw, 160px);
+  height: auto;
+
+  /* Soft separation glow */
+  filter:
+    drop-shadow(0 6px 20px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 24px rgba(255, 255, 255, 0.55));
+
+  /* UX safety */
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
 .welcome-badge {
   display: inline-flex;
   align-items: center;

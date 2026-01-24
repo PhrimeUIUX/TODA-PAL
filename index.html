@@ -16,6 +16,7 @@
   <meta name="google-site-verification" content="tGoy0c4mB1vw4YvYh8_PCvg2uZgNc0WMf9h0rzRRFiw" />
 
   <link rel="stylesheet" href="style/indexstyle.css">
+  <link rel="stylesheet" href="style/navigationbar.css">
   <link rel="stylesheet" href="style/downloadbuttonpopup.css">
   <link rel="stylesheet" href="style/customerservicepopup.css">
 </head>
@@ -66,8 +67,32 @@
     </div>
   </div>
 
+  <nav class="glass-nav">
+  <div class="nav-inner">
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a id="download-button" class="nav-cta">Get started</a>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="/about.html">About</a>
+</div>
+
+
+
+
+
+
 
   <div id="hero-section">
+    <img id="hero-logo" src="https://storage.googleapis.com/ppctoda_website/ppctoda_assets/ppctodalogo.png" alt="PPC TODA" />
     <div class="welcome-badge">
       <span class="text">Welcome to PPC TODA</span>
     </div>
@@ -152,6 +177,7 @@
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
   <script src="script/customerservicepopup.js"></script>
   <script src="script/downloadbuttonlogic.js"></script>
+  <script src="script/navigationbar.js"></script>
   <script src="script/"></script>
 
 </body>
