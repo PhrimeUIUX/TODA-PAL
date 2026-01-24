@@ -17,9 +17,20 @@
 
   <link rel="stylesheet" href="style/indexstyle.css">
   <link rel="stylesheet" href="style/downloadbuttonpopup.css">
+  <link rel="stylesheet" href="style/customerservicepopup.css">
 </head>
 
 <body>
+
+  <div class="contact-customer-service" aria-label="Customer Support">
+  <dotlottie-player
+    src="https://lottie.host/09cee977-1e44-4cdd-8d2c-eac364a06be9/aVam5DrIeQ.lottie"
+    autoplay
+    loop
+    style="width: 28px; height: 28px"
+  ></dotlottie-player>
+</div>
+
 
   <div class="overlay" id="popupOverlay" role="dialog" aria-modal="true">
     <div class="popup">
@@ -73,9 +84,73 @@
   </div>
   </div>
 
+  <div id="supportOverlay" class="support-overlay hidden">
+          <div class="support-modal">
+            <div class="support-header">
+              <h2>Customer Support</h2>
+              <p>Select an admin to call</p>
+              <button class="support-close">&times;</button>
+            </div>
 
+            <!-- Primary Support -->
+            <a
+              href="tel:09686410532"
+              id="jonathanorbiso"
+              class="support-card primary"
+            >
+              <div class="badge">Recommended</div>
+              <h3>Jonathan Orbiso</h3>
+              <span class="number">0968 641 0532</span>
+              <small>Primary Support Admin</small>
+            </a>
+
+            <!-- Other Agents -->
+            <div class="support-list">
+              <a href="tel:09189100445" class="support-card">
+                <h4>Miguel Gacho</h4>
+                <span>0918 910 0445</span>
+              </a>
+
+              <a href="tel:09097261642" class="support-card">
+                <h4>Mike Tindog</h4>
+                <span>0909 726 1642</span>
+              </a>
+
+              <a href="tel:09947345087" class="support-card">
+                <h4>Mike Tindog</h4>
+                <span>0994 734 5087</span>
+              </a>
+
+              <a href="tel:09708092344" class="support-card">
+                <h4>Jesus Bisco</h4>
+                <span>0970 809 2344</span>
+              </a>
+
+              <a href="tel:09912726375" class="support-card">
+                <h4>Rodel Valdez</h4>
+                <span>0991 272 6375</span>
+              </a>
+
+              <a href="tel:09100764811" class="support-card">
+                <h4>Jing Bacosa</h4>
+                <span>0910 076 4811</span>
+              </a>
+
+              <a href="tel:09920272940" class="support-card">
+                <h4>Nercielito “Nene”</h4>
+                <span>0992 027 2940</span>
+              </a>
+
+              <a href="tel:09930598005" class="support-card">
+                <h4>Darwin Donaire</h4>
+                <span>0993 059 8005</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <script src="script/customerservicepopup.js"></script>
   <script src="script/downloadbuttonlogic.js"></script>
   <script src="script/"></script>
 
