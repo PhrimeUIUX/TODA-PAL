@@ -5,23 +5,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!mainDownloadButton || !popup) return;
 
-  // Main button logic (already yours)
-  mainDownloadButton.addEventListener("click", () => {
+  // Main download logic
+  const handleDownload = () => {
     if (isIOS()) {
       window.location.href = IOS_APP_URL;
     } else {
       popup.style.display = "flex";
     }
-  });
+  };
 
-  // 🔁 Trigger button → clicks main button
+  mainDownloadButton.addEventListener("click", handleDownload);
+
+  // Secondary trigger → reuse same logic
   if (triggerButton) {
-    triggerButton.addEventListener("click", () => {
-      mainDownloadButton.click();
-    });
+    triggerButton.addEventListener("click", handleDownload);
   }
 
-  // Close popup when clicking overlay
+  // Close popup when clicking outside content
   popup.addEventListener("click", (e) => {
     if (e.target === popup) {
       popup.style.display = "none";
