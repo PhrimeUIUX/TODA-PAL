@@ -70,11 +70,12 @@
 
   border: 1px solid rgba(255, 255, 255, 0.18);
 
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
 .reviews-cta:hover {
   transform: translateY(-1px);
   background: rgba(255, 255, 255, 0.18);
 }
-
