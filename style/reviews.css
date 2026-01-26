@@ -80,9 +80,9 @@
   padding: 24px;
   border-radius: 24px;
 
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(24px) saturate(100%);
+  -webkit-backdrop-filter: blur(24px) saturate(100%);
 
   border: 1px solid rgba(255, 255, 255, 0.12);
 
