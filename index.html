@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -25,202 +26,19 @@
       content="tGoy0c4mB1vw4YvYh8_PCvg2uZgNc0WMf9h0rzRRFiw"
     />
 
-    <link rel="stylesheet" href="style/reviews.css" />
-    <link rel="stylesheet" href="style/section2.css" />
-    <link rel="stylesheet" href="style/indexstyle.css" />
-    <link rel="stylesheet" href="style/navigationbar.css" />
-    <link rel="stylesheet" href="style/downloadbuttonpopup.css" />
-    <link rel="stylesheet" href="style/customerservicepopup.css" />
+    <link rel="stylesheet" href="/style/reviews.css" />
+    <link rel="stylesheet" href="/style/section2.css" />
+    <link rel="stylesheet" href="/style/indexstyle.css" />
+    <link rel="stylesheet" href="/style/navigationbar.css" />
+    <link rel="stylesheet" href="/style/downloadbuttonpopup.css" />
+    <link rel="stylesheet" href="/style/customerservicepopup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
   </head>
-
   <body>
-    <div class="contact-customer-service" aria-label="Customer Support">
-      <dotlottie-player
-        src="https://lottie.host/09cee977-1e44-4cdd-8d2c-eac364a06be9/aVam5DrIeQ.lottie"
-        autoplay
-        loop
-        style="width: 28px; height: 28px"
-      ></dotlottie-player>
-    </div>
-
-    <div id="supportOverlay" class="support-overlay hidden">
-      <div class="support-modal">
-        <div class="support-header">
-          <h2>Customer Support</h2>
-          <p>Select an admin to call</p>
-          <button class="support-close">&times;</button>
-        </div>
-
-        <!-- Primary Support -->
-        <a
-          href="tel:09686410532"
-          id="jonathanorbiso"
-          class="support-card primary"
-        >
-          <div class="badge">Recommended</div>
-          <h3>Jonathan Orbiso</h3>
-          <span class="number">0968 641 0532</span>
-          <small>Primary Support Admin</small>
-        </a>
-
-        <!-- Other Agents -->
-        <div class="support-list">
-          <a href="tel:09189100445" class="support-card">
-            <h4>Miguel Gacho</h4>
-            <span>0918 910 0445</span>
-          </a>
-
-          <a href="tel:09097261642" class="support-card">
-            <h4>Mike Tindog</h4>
-            <span>0909 726 1642</span>
-          </a>
-
-          <a href="tel:09947345087" class="support-card">
-            <h4>Mike Tindog</h4>
-            <span>0994 734 5087</span>
-          </a>
-
-          <a href="tel:09708092344" class="support-card">
-            <h4>Jesus Bisco</h4>
-            <span>0970 809 2344</span>
-          </a>
-
-          <a href="tel:09912726375" class="support-card">
-            <h4>Rodel Valdez</h4>
-            <span>0991 272 6375</span>
-          </a>
-
-          <a href="tel:09100764811" class="support-card">
-            <h4>Jing Bacosa</h4>
-            <span>0910 076 4811</span>
-          </a>
-
-          <a href="tel:09920272940" class="support-card">
-            <h4>Nercielito “Nene”</h4>
-            <span>0992 027 2940</span>
-          </a>
-
-          <a href="tel:09930598005" class="support-card">
-            <h4>Darwin Donaire</h4>
-            <span>0993 059 8005</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="overlay" id="popupOverlay" role="dialog" aria-modal="true">
-      <div class="popup">
-        <!-- Icon / Animation -->
-        <div class="popup-icon">
-          <dotlottie-player
-            src="https://lottie.host/09cee977-1e44-4cdd-8d2c-eac364a06be9/aVam5DrIeQ.lottie"
-            background="transparent"
-            speed="0.9"
-            loop
-            autoplay
-            style="width: 40px; height: 40px"
-            aria-hidden="true"
-          >
-          </dotlottie-player>
-        </div>
-
-        <!-- Headline -->
-        <h2>Pumili ng download option</h2>
-
-        <!-- Optional clarity text (highly recommended) -->
-        <p>Para sa mas mabilis na pag install.</p>
-
-        <!-- Actions -->
-        <div id="answerButtonContainer">
-          <!-- Secondary -->
-          <button class="yes" onclick="answer('apk')" aria-label="Download APK">
-            <img
-              src="assets/android_2_fill.png"
-              alt=""
-              width="18"
-              height="18"
-            />
-            APK
-          </button>
-
-          <!-- Primary -->
-          <button
-            class="no"
-            onclick="answer('fast')"
-            aria-label="Fast download"
-          >
-            <img src="assets/flash_fill.png" alt="" width="18" height="18" />
-            Fast
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <nav class="glass-nav">
-      <div class="nav-inner">
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <a id="download-button-trigger" class="nav-cta">Get started</a>
-      </div>
-    </nav>
-
-    <!-- MOBILE DRAWER -->
-    <div class="nav-drawer" id="navDrawer">
-      <a href="/about.html">About</a>
-    </div>
-
-    <div id="hero-section">
-      <!-- <img id="hero-logo" src="https://storage.googleapis.com/ppctoda_website/ppctoda_assets/ppctodalogo.png" alt="PPC TODA" /> -->
-      <div class="welcome-badge">
-        <span class="text">Welcome to PPC TODA</span>
-      </div>
-      <div id="headline">
-        Tricycle Booking at Your <span class="gradient-text"> Fingertips</span>
-      </div>
-      <div id="subtext">
-        PPC TODA is the official app of Puerto Princesa City’s Tricycle Drivers
-        Federation, designed to improve services and make transportation easier
-        and more reliable for passengers.
-      </div>
-      <div class="contactbuttonmargin" id="download-button">
-        <a id="contactbutton">Download the app</a>
-      </div>
-    </div>
-
-    <section id="section-2">
-      <header class="reviews-header">
-        <p class="reviews-eyebrow">Trusted by locals</p>
-        <h2 class="reviews-title">What people say about PPC TODA</h2>
-        <p class="reviews-subtitle">
-          Real experiences from passengers and partners in Puerto Princesa
-        </p>
-      </header>
-      <section id="reviews-section">
-        <div class="reviews-viewport">
-          <div class="reviews-track" id="reviewsTrack"></div>
-        </div>
-      </section>
-      <div class="reviews-footer">
-        <div class="reviews-trust">
-          <span class="trust-stars">⭐ 4.9</span>
-          <span class="trust-text">Average rating from 10,000+ rides</span>
-        </div>
-
-        <a class="reviews-cta"> Book your first ride → </a>
-      </div>
-    </section>
-
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-    <script src="script/downloadbuttontrigger.js"></script>
-    <script src="script/customerservicepopup.js"></script>
-    <script src="script/downloadbuttonlogic.js"></script>
-    <script src="script/reviewsctafunction.js"></script>
-    <script src="script/navigationbar.js"></script>
-    <script src="script/reviewsdata.js"></script>
-    <script src="script/"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
