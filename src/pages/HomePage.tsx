@@ -100,6 +100,27 @@ export default function HomePage() {
   }, [isSupportOpen]);
 
   useEffect(() => {
+    if (!isNavOpen) {
+      return;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsNavOpen(false);
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isNavOpen]);
+
+  useEffect(() => {
     const track = reviewsTrackRef.current;
     if (!track) {
       return;
@@ -261,7 +282,9 @@ export default function HomePage() {
           <button
             className={`nav-toggle ${isNavOpen ? 'open' : ''}`}
             id="navToggle"
-            aria-label="Open menu"
+            aria-label={isNavOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isNavOpen}
+            aria-controls="navDrawer"
             onClick={() => setIsNavOpen((prev) => !prev)}
           >
             <span></span>
@@ -275,7 +298,22 @@ export default function HomePage() {
         </div>
       </nav>
 
+      <div
+        className={`nav-backdrop ${isNavOpen ? 'open' : ''}`}
+        onClick={() => setIsNavOpen(false)}
+        aria-hidden={!isNavOpen}
+      />
       <div className={`nav-drawer ${isNavOpen ? 'open' : ''}`} id="navDrawer">
+        <div className="nav-drawer-header">
+          <span className="nav-drawer-title">Menu</span>
+          <button
+            className="nav-drawer-close"
+            aria-label="Close menu"
+            onClick={() => setIsNavOpen(false)}
+          >
+            &times;
+          </button>
+        </div>
         <Link to="/about" onClick={() => setIsNavOpen(false)}>
           About
         </Link>

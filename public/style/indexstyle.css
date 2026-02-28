@@ -129,42 +129,37 @@ body {
 .gradient-text {
   display: inline-block;
   width: fit-content;
-  padding: 0 3px 0 0;
+  padding: 0 1.5px 0 0;
   color: transparent;
-  background-image: linear-gradient(
-    110deg,
-    #f2fbff 8%,
-    #ffffff 30%,
-    #72b8ff 52%,
-    #2f7df3 72%,
-    #ffffff 94%
+  background: linear-gradient(
+    120deg,
+    #fff 0%,
+    #fff 45%,
+    #007bff 50%,
+    #fff 55%,
+    #fff 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
-  background-size: 220% 100%;
-  background-position: 0% 50%;
-  animation: gradientFlow 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  text-shadow: 0 4px 16px rgba(10, 70, 167, 0.22);
+  background-size: 600% 100%;
+  animation: slashOnce 10s linear infinite;
 }
 
-@keyframes gradientFlow {
+@keyframes slashOnce {
   0% {
-    background-position: 0% 50%;
+    background-position: 200% 0;
   }
 
-  50% {
-    background-position: 100% 50%;
+  98% {
+    background-position: 0 0;
+  }
+
+  99% {
+    background-position: -200% 0;
   }
 
   100% {
-    background-position: 0% 50%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .gradient-text {
-    animation: none;
-    background-position: 50% 50%;
+    background-position: -200% 0;
   }
 }
 
