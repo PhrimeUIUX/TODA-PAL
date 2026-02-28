@@ -160,10 +160,6 @@ export default function HomePage() {
     setIsDownloadOpen(false);
   };
 
-  const scrollToHero = () => {
-    heroRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <>
       <div
@@ -290,10 +286,10 @@ export default function HomePage() {
           <span className="text">Welcome to PPC TODA</span>
         </div>
         <div id="headline">
-          Tricycle Booking at Your <span className="gradient-text"> Fingertips</span>
+          <span className="gradient-text">Tricycle</span> Booking at Your Fingertips
         </div>
         <div id="subtext">
-          PPC TODA is the official app of Puerto Princesa City&apos;s Tricycle Drivers Federation,
+          PPC TODA is the official app of Puerto Princesa City&apos;s Tricycle Operators and Drivers Association Federation,
           designed to improve services and make transportation easier and more reliable for
           passengers.
         </div>
@@ -341,7 +337,7 @@ export default function HomePage() {
             <span className="trust-text">Average rating from 10,000+ rides</span>
           </div>
 
-          <a className="reviews-cta" onClick={scrollToHero}>
+          <a className="reviews-cta" onClick={openDownloadFlow}>
             Book your first ride →
           </a>
         </div>
