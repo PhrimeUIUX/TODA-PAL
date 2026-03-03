@@ -94,8 +94,8 @@ const COMPARISON_COLUMNS: readonly ComparisonColumn[] = [
 
 const METRICS: readonly Metric[] = [
   { label: 'Drivers', value: '150+', Icon: DriversIcon },
-  { label: 'Users', value: '1.5k+', Icon: UsersIcon },
-  { label: 'Bookings', value: '10k+', Icon: BookingsIcon }
+  { label: 'Users', value: '3K+', Icon: UsersIcon },
+  { label: 'Bookings', value: '10K+', Icon: BookingsIcon }
 ] as const;
 
 const CTAS: readonly Cta[] = [
