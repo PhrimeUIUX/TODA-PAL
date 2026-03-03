@@ -212,13 +212,21 @@
 }
 
 .why-brand-logo {
-  width: clamp(155px, 24vw, 260px);
-  margin-top: 14px;
+  width: clamp(124px, 15vw, 170px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.34);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  margin-top: 16px;
 }
 
 .why-builder-logo {
-  width: clamp(220px, 25vw, 500px);
-  margin-top: 12px;
+  width: clamp(124px, 15vw, 170px);
+  height: auto;
+  margin-top: 14px;
 }
 
 .why-cta-block {
@@ -254,25 +262,32 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  width: min(240px, 100%);
+  min-height: 46px;
   padding: 0 18px;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
-  transition: transform 0.16s ease, background 0.16s ease, color 0.16s ease;
+  color: #fff;
+  background: #007bff;
+  border: 1px solid rgba(126, 199, 255, 0.45);
+  transition: transform 0.16s ease, background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
 }
 
 .why-btn:hover {
   transform: translateY(-1px);
+  background: #1f8cff;
+  box-shadow: 0 10px 22px rgba(0, 123, 255, 0.32);
 }
 
 .why-btn.solid {
   background: #007bff;
   color: #fff;
+  border: 1px solid rgba(126, 199, 255, 0.45);
 }
 
 .why-btn.outline {
-  background: rgba(255, 255, 255, 0.1);
+  background: #007bff;
   color: #fff;
   border: 1px solid rgba(126, 199, 255, 0.45);
 }

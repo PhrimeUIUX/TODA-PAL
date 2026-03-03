@@ -108,7 +108,7 @@ const CTAS: readonly Cta[] = [
   },
   {
     title: 'Experiencing Similar Challenges?',
-    description: "Bring TODA PAL's tricycle transport solution to your area.",
+    description: "Bring PPC TODA's tricycle transport solution to your area.",
     href: 'mailto:hello@speedovate.com?subject=Digitalize%20My%20Area',
     label: 'Digitalize My Area',
     variant: 'outline'
@@ -206,32 +206,32 @@ const WhyPpcToda = memo(function WhyPpcToda() {
         </p>
         <p>
           PPC TODA only started as a community project in Puerto Princesa City, now it is evolving
-          into TODA PAL, a national-scale startup bringing scalable, tech-driven tricycle transport
+          into PPC TODA, a national-scale startup bringing scalable, tech-driven tricycle transport
           solutions to communities across the Philippines and beyond.
         </p>
         <p className="why-strong">Philippine Startup Week 2025 embodies this vision: Start Local, Go Global.</p>
 
         <img
-          src="https://storage.googleapis.com/ppc_toda_web_app/downloadpage/iconlibrary/todapallogo.png"
-          alt="TODA PAL"
+          src="/assets/favicon/web-app-manifest-512x512.png"
+          alt="PPC TODA"
           className="why-brand-logo"
         />
       </section>
 
       <section className="why-container why-section why-copy">
         <h2>The Builder</h2>
-        <p>Speedovate, proudly from Palawan, is the builder behind TODA PAL.</p>
+        <p>Speedovate, proudly from Palawan, is the builder behind PPC TODA.</p>
         <p>
           DICT MIMAROPA STEP UP 2024 Graduate and Winner.
           <br />
           DICT MIMAROPA Geeks on a Beach 7 Representative.
           <br />
-          With proven impact and scalable innovation, TODA PAL is ready to digitalize tricycle
+          With proven impact and scalable innovation, PPC TODA is ready to digitalize tricycle
           transport nationwide.
         </p>
 
         <img
-          src="https://storage.googleapis.com/ppc_toda_web_app/downloadpage/iconlibrary/speedovatelogo.png"
+          src="/assets/about/speedovate-logo.png"
           alt="Speedovate"
           className="why-builder-logo"
         />
