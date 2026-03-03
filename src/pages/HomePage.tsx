@@ -317,6 +317,9 @@ export default function HomePage() {
         <Link to="/about" onClick={() => setIsNavOpen(false)}>
           About
         </Link>
+        <Link to="/why-ppc-toda" onClick={() => setIsNavOpen(false)}>
+          Why PPC TODA
+        </Link>
       </div>
 
       <div id="hero-section" ref={heroRef}>
