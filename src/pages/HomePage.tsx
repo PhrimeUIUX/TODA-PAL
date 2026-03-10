@@ -12,7 +12,7 @@ type Review = {
 
 const LATEST_APK_URL =
   'https://storage.googleapis.com/ppctoda_website/ppctoda_apk/ppctoda_v1.0.28(48).apk';
-const FAST_DOWNLOAD_URL = 'https://ppc-toda.vercel.app/download';
+const FAST_DOWNLOAD_URL = 'https://ppc-toda.com/download';
 const IOS_APP_URL = 'https://apps.apple.com/us/app/ppc-toda/id6743928831';
 
 const SUPPORT_CONTACTS = [
