@@ -17,8 +17,6 @@ export default function LiquidGlassButton({
   const sizerRef = useRef<HTMLSpanElement | null>(null);
   const parentRef = useRef<HTMLSpanElement | null>(null);
   const [glassSize, setGlassSize] = useState({ width: 220, height: 52 });
-  const [globalMousePos, setGlobalMousePos] = useState({ x: 0, y: 0 });
-  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const [proximityTransform, setProximityTransform] = useState('translate3d(0, 0, 0) scale(1)');
 
   useEffect(() => {
@@ -54,12 +52,6 @@ export default function LiquidGlassButton({
       const rect = parent.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-
-      setGlobalMousePos({ x: event.clientX, y: event.clientY });
-      setMouseOffset({
-        x: ((event.clientX - centerX) / rect.width) * 100,
-        y: ((event.clientY - centerY) / rect.height) * 100
-      });
 
       const dx = event.clientX - centerX;
       const dy = event.clientY - centerY;
@@ -120,21 +112,18 @@ export default function LiquidGlassButton({
       <LiquidGlass
         style={mergedStyle}
         padding="clamp(10px, 2vw, 15px) clamp(14px, 3vw, 20px)"
-        mode="standard"
-        mouseContainer={null}
-        globalMousePos={globalMousePos}
-        mouseOffset={mouseOffset}
-        displacementScale={64}
-        blurAmount={0}
-        aberrationIntensity={1.8}
+        mode="shader"
+        mouseContainer={parentRef}
+        displacementScale={72}
+        blurAmount={0.5}
+        saturation={130}
+        aberrationIntensity={2}
         elasticity={0.35}
         cornerRadius={200}
         glassSize={glassSize}
-        overLight={true}
+        overLight={false}
       >
-        <span className="cta-action">
-          <span className="cta-content">{children}</span>
-        </span>
+        <span className="cta-content">{children}</span>
       </LiquidGlass>
     </span>
   );
