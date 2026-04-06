@@ -8,8 +8,17 @@ type ReviewsSectionProps = {
 };
 
 export default function ReviewsSection({ reviewsCarouselRef, onDownload }: ReviewsSectionProps) {
+  const getReviewInitials = (name: string) =>
+    name
+      .replace(/&/g, ' ')
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0]?.toUpperCase() ?? '')
+      .join('');
+
   return (
-    <section className="reviews-section">
+    <section className="reviews-section homepage-panel">
       <header className="reviews-header">
         <div className="marketing-badge reviews-badge">
           <span className="marketing-badge-text">Trusted by locals</span>
@@ -27,16 +36,9 @@ export default function ReviewsSection({ reviewsCarouselRef, onDownload }: Revie
               <div className="review-card" key={`${review.name}-${index}`}>
                 <div className="review-content">
                   <div className="review-header">
-                    <img
-                      className="review-photo"
-                      src={review.photo}
-                      alt={review.name}
-                      loading="lazy"
-                      onError={(event) => {
-                        event.currentTarget.onerror = null;
-                        event.currentTarget.src = '/assets/placeholders/review-avatar.svg';
-                      }}
-                    />
+                    <div className="review-avatar" aria-hidden="true">
+                      {getReviewInitials(review.name)}
+                    </div>
                     <div>
                       <div className="review-name">{review.name}</div>
                       <div className="review-stars">{'⭐'.repeat(review.stars)}</div>

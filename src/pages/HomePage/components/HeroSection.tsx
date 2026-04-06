@@ -6,7 +6,7 @@ type HeroSectionProps = {
 
 export default function HeroSection({ onDownload }: HeroSectionProps) {
   return (
-    <div id="hero-section">
+    <section id="hero-section" className="homepage-panel">
       <div className="marketing-badge">
         <span className="marketing-badge-text">Welcome to PPC TODA</span>
       </div>
@@ -23,6 +23,6 @@ export default function HeroSection({ onDownload }: HeroSectionProps) {
           Download the app
         </LiquidGlassButton>
       </div>
-    </div>
+    </section>
   );
 }

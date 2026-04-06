@@ -1,11 +1,12 @@
-export default function HomeFooter() {
+export default function FooterSection() {
   return (
-    <footer className="homepage-footer">
+    <footer className="footer-section homepage-panel">
+      <p className="footer-section-label">Built for Commuters</p>
       <a
         href="https://facebook.com/Phrimeuniverse"
         target="_blank"
         rel="noopener noreferrer"
-        className="homepage-footer-link"
+        className="footer-section-link"
       >
         Web Designed & Developed by Phrime UI/UX
       </a>

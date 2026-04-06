@@ -1,5 +1,5 @@
 import { memo, type SVGProps, useEffect } from 'react';
-import './whyppctoda.css';
+import './WhyPpcToda.css';
 
 type IconComponent = (props: SVGProps<SVGSVGElement>) => React.JSX.Element;
 
@@ -209,7 +209,9 @@ const WhyPpcToda = memo(function WhyPpcToda() {
           into PPC TODA, a national-scale startup bringing scalable, tech-driven tricycle transport
           solutions to communities across the Philippines and beyond.
         </p>
-        <p className="why-strong">Philippine Startup Week 2025 embodies this vision: Start Local, Go Global.</p>
+        <p className="why-strong">
+          Philippine Startup Week 2025 embodies this vision: Start Local, Go Global.
+        </p>
 
         <img
           src="/assets/favicon/web-app-manifest-512x512.png"

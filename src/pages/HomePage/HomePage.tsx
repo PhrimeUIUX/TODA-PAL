@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './HomePage.css';
 import DownloadModal from './components/DownloadModal';
+import FooterSection from './components/FooterSection';
 import HeroSection from './components/HeroSection';
-import HomeFooter from './components/HomeFooter';
 import MobileNav from './components/MobileNav';
 import ReviewsSection from './components/ReviewsSection';
 import SupportButton from './components/SupportButton';
@@ -17,6 +17,7 @@ export default function HomePage() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDownloadOpen, setIsDownloadOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
+  const homeScrollRef = useRef<HTMLDivElement | null>(null);
   const reviewsCarouselRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -31,11 +32,18 @@ export default function HomePage() {
     };
 
     const previousOverflow = document.body.style.overflow;
+    const previousScrollOverflow = homeScrollRef.current?.style.overflowY ?? '';
     document.body.style.overflow = 'hidden';
+    if (homeScrollRef.current) {
+      homeScrollRef.current.style.overflowY = 'hidden';
+    }
     window.addEventListener('keydown', onKeyDown);
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      if (homeScrollRef.current) {
+        homeScrollRef.current.style.overflowY = previousScrollOverflow;
+      }
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isNavOpen]);
@@ -46,12 +54,39 @@ export default function HomePage() {
     }
 
     const previousOverflow = document.body.style.overflow;
+    const previousScrollOverflow = homeScrollRef.current?.style.overflowY ?? '';
     document.body.style.overflow = 'hidden';
+    if (homeScrollRef.current) {
+      homeScrollRef.current.style.overflowY = 'hidden';
+    }
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      if (homeScrollRef.current) {
+        homeScrollRef.current.style.overflowY = previousScrollOverflow;
+      }
     };
   }, [isSupportOpen]);
+
+  useEffect(() => {
+    if (!isDownloadOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    const previousScrollOverflow = homeScrollRef.current?.style.overflowY ?? '';
+    document.body.style.overflow = 'hidden';
+    if (homeScrollRef.current) {
+      homeScrollRef.current.style.overflowY = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      if (homeScrollRef.current) {
+        homeScrollRef.current.style.overflowY = previousScrollOverflow;
+      }
+    };
+  }, [isDownloadOpen]);
 
   useEffect(() => {
     const track = reviewsCarouselRef.current;
@@ -129,9 +164,11 @@ export default function HomePage() {
         onToggle={() => setIsNavOpen((prev) => !prev)}
         onDownload={openDownloadFlow}
       />
-      <HeroSection onDownload={openDownloadFlow} />
-      <ReviewsSection reviewsCarouselRef={reviewsCarouselRef} onDownload={openDownloadFlow} />
-      <HomeFooter />
+      <main ref={homeScrollRef} className="homepage-scroll">
+        <HeroSection onDownload={openDownloadFlow} />
+        <ReviewsSection reviewsCarouselRef={reviewsCarouselRef} onDownload={openDownloadFlow} />
+        <FooterSection />
+      </main>
     </>
   );
 }

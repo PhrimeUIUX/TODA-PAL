@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import './about.css';
+import './AboutPage.css';
 
 export default function AboutPage() {
   useEffect(() => {
