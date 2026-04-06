@@ -38,6 +38,10 @@ body {
   background-color: #09244b;
 }
 
+:root {
+  --floating-nav-offset: 72px;
+}
+
 .homepage-scroll {
   height: 100svh;
   overflow-y: auto;
@@ -59,10 +63,11 @@ body {
   align-items: center;
   text-align: center;
   max-width: 100vw;
-  height: 100vh;
+  min-height: 100svh;
   gap: clamp(24px, 4vw, 48px);
   padding-inline: clamp(16px, 4vw, 32px);
-  padding-block: clamp(48px, 10vh, 96px);
+  padding-top: calc(clamp(48px, 10vh, 96px) + var(--floating-nav-offset));
+  padding-bottom: calc(clamp(48px, 10vh, 96px) + var(--floating-nav-offset));
   background-image: url("/assets/placeholders/home-hero-bg.svg");
   background-size: cover;
   background-position: center;
@@ -435,11 +440,13 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   padding-inline: clamp(16px, 4vw, 32px);
-  padding-block: clamp(64px, 12vh, 128px);
+  padding-top: calc(clamp(64px, 12vh, 128px) + var(--floating-nav-offset));
+  padding-bottom: calc(clamp(64px, 12vh, 128px) + var(--floating-nav-offset));
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: clamp(24px, 6vw, 48px);
 }
 
@@ -572,6 +579,24 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .reviews-section {
+    gap: 20px;
+    padding-top: calc(48px + var(--floating-nav-offset));
+    padding-bottom: calc(48px + var(--floating-nav-offset));
+  }
+
+  .reviews-header {
+    margin: 0 auto 24px;
+    gap: 10px;
+  }
+
+  .reviews-footer {
+    margin-top: 24px;
+    gap: 14px;
+  }
 }
 
 .reviews-trust {
@@ -943,7 +968,10 @@ body {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: clamp(32px, 6vw, 56px);
+  padding-top: calc(clamp(32px, 6vw, 56px) + var(--floating-nav-offset));
+  padding-right: clamp(32px, 6vw, 56px);
+  padding-bottom: calc(clamp(32px, 6vw, 56px) + var(--floating-nav-offset));
+  padding-left: clamp(32px, 6vw, 56px);
   background-image: url("/assets/placeholders/footer-bg.svg?v=2");
   background-size: cover;
   background-position: center;
