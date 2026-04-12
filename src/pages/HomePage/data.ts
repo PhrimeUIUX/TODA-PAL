@@ -5,8 +5,7 @@ export type Review = {
   text: string;
 };
 
-export const LATEST_APK_URL =
-  'https://storage.googleapis.com/ppctoda_website/ppctoda_apk/ppctoda_v1.0.28(48).apk';
+export const LATEST_APK_URL = 'https://apk.ppc-toda.com/ppctoda_v1.0.30(50).apk';
 export const FAST_DOWNLOAD_URL = 'https://ppc-toda.com/download';
 export const IOS_APP_URL = 'https://apps.apple.com/us/app/ppc-toda/id6743928831';
 

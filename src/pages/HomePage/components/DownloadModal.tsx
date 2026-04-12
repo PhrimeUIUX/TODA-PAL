@@ -32,7 +32,7 @@ export default function DownloadModal({ isOpen, onClose, onChoose }: DownloadMod
         <p>Para sa mas mabilis na pag install.</p>
 
         <div id="answerButtonContainer">
-          {/* <button
+          <button
             type="button"
             className="yes"
             aria-label="Download APK"
@@ -40,7 +40,7 @@ export default function DownloadModal({ isOpen, onClose, onChoose }: DownloadMod
           >
             <img src="/assets/android_2_fill.png" alt="" width="18" height="18" />
             APK
-          </button> */}
+          </button>
 
           <button
             type="button"
