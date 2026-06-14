@@ -30,6 +30,11 @@ export default function HeroSection({ onDownload }: HeroSectionProps) {
             Why PPC TODA?
           </LiquidGlassButton>
         </Link>
+        <Link to="/about" className="contactbuttonmargin" id="about-button">
+          <LiquidGlassButton className="liquid-glass-shell">
+            About
+          </LiquidGlassButton>
+        </Link>
       </div>
     </section>
   );

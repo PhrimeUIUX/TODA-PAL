@@ -3,7 +3,6 @@ import './HomePage.css';
 import DownloadModal from './components/DownloadModal';
 import FooterSection from './components/FooterSection';
 import HeroSection from './components/HeroSection';
-import MobileNav from './components/MobileNav';
 import ReviewsSection from './components/ReviewsSection';
 import SupportButton from './components/SupportButton';
 import SupportModal from './components/SupportModal';
@@ -14,39 +13,10 @@ function isIOS(): boolean {
 }
 
 export default function HomePage() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDownloadOpen, setIsDownloadOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
   const homeScrollRef = useRef<HTMLDivElement | null>(null);
   const reviewsCarouselRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!isNavOpen) {
-      return;
-    }
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsNavOpen(false);
-      }
-    };
-
-    const previousOverflow = document.body.style.overflow;
-    const previousScrollOverflow = homeScrollRef.current?.style.overflowY ?? '';
-    document.body.style.overflow = 'hidden';
-    if (homeScrollRef.current) {
-      homeScrollRef.current.style.overflowY = 'hidden';
-    }
-    window.addEventListener('keydown', onKeyDown);
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      if (homeScrollRef.current) {
-        homeScrollRef.current.style.overflowY = previousScrollOverflow;
-      }
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [isNavOpen]);
 
   useEffect(() => {
     if (!isSupportOpen) {
@@ -157,12 +127,6 @@ export default function HomePage() {
         isOpen={isDownloadOpen}
         onClose={() => setIsDownloadOpen(false)}
         onChoose={handleDownloadChoice}
-      />
-      <MobileNav
-        isOpen={isNavOpen}
-        onClose={() => setIsNavOpen(false)}
-        onToggle={() => setIsNavOpen((prev) => !prev)}
-        onDownload={openDownloadFlow}
       />
       <main ref={homeScrollRef} className="homepage-scroll">
         <HeroSection onDownload={openDownloadFlow} />
