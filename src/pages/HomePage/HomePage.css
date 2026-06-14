@@ -154,7 +154,30 @@ body {
   min-height: 52px;
   user-select: none;
   width: 100%;
-  margin-top: 2px;
+}
+
+.buttons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 52px;
+  max-width: 400px;
+
+}
+
+@media (min-width: 640px) {
+  .buttons-group {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .contactbuttonmargin {
+    flex: 1;
+    max-width: 200px;
+  }
 }
 
 .liquid-glass-shell {

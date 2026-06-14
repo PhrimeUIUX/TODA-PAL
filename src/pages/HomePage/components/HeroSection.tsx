@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import LiquidGlassButton from '../../../components/LiquidGlassButton';
 
 type HeroSectionProps = {
@@ -18,10 +19,17 @@ export default function HeroSection({ onDownload }: HeroSectionProps) {
         Association Federation, designed to improve services and make transportation easier and
         more reliable for passengers.
       </div>
-      <div className="contactbuttonmargin" id="download-button">
-        <LiquidGlassButton className="liquid-glass-shell" onClick={onDownload}>
-          Download the app
-        </LiquidGlassButton>
+      <div className="buttons-group">
+        <div className="contactbuttonmargin" id="download-button">
+          <LiquidGlassButton className="liquid-glass-shell" onClick={onDownload}>
+            Download the app
+          </LiquidGlassButton>
+        </div>
+        <Link to="/why-ppc-toda" className="contactbuttonmargin" id="why-button">
+          <LiquidGlassButton className="liquid-glass-shell">
+            Why PPC TODA?
+          </LiquidGlassButton>
+        </Link>
       </div>
     </section>
   );
