@@ -148,7 +148,7 @@ body {
 }
 
 .contactbuttonmargin {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   min-height: 52px;
