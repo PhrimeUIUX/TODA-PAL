@@ -304,6 +304,8 @@ body {
   .review-card {
     flex: 0 0 50%;
   }
+
+  
 }
 
 @media (min-width: 1024px) {
@@ -395,6 +397,13 @@ body {
   .reviews-footer {
     margin-top: 8px;
     gap: 14px;
+  }
+
+   .buttons-group {
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+    height: auto;
   }
 }
 
